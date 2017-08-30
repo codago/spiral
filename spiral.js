@@ -2,8 +2,10 @@
 
 function spiral(param)
 {
-  let tampung = new Array(param),
-  angka=0;
+  let tampung = new Array(param);
+  let angka   = 0;
+  let hasil   = [];
+
   for(let  i=0; i<param; i++)
   {
     tampung[i] = new Array(param);
@@ -23,7 +25,7 @@ function spiral(param)
     {
         for (let i=kiri; i<kanan; i++)
         {
-            console.log(tampung[atas][i])
+            hasil.push(tampung[atas][i])
         }
         atas= atas+1;
         arah = "bawah";
@@ -33,7 +35,7 @@ function spiral(param)
     {
         for (let i=atas; i<bawah; i++)
         {
-            console.log(tampung[i][kanan-1])
+            hasil.push(tampung[i][kanan-1])
         }
         kanan= kanan-1;
         arah = "kiri";
@@ -43,7 +45,7 @@ function spiral(param)
     {
         for (let i=kanan-1; i>=kiri; i--)
         {
-            console.log(tampung[bawah-1][i])
+            hasil.push(tampung[bawah-1][i])
         }
         bawah= bawah-1;
         arah = "atas";
@@ -53,13 +55,13 @@ function spiral(param)
     {
         for (let i=bawah-1; i>=atas; i--)
         {
-            console.log(tampung[i][kiri])
+            hasil.push(tampung[i][kiri])
         }
         kiri= kiri+1;
         arah = "kanan";
     }
   }
-
+console.log(hasil);
 }
 
 spiral (5);
