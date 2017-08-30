@@ -3,7 +3,9 @@
 function spiral(param1)
 {
  let grid = new Array(param1),
- number=0;
+ number = 0;
+ let result = [];
+
  for(let  i=0; i<param1; i++)
  {
    grid[i] = new Array(param1);
@@ -22,7 +24,8 @@ function spiral(param1)
    {
        for (let i=left; i<right; i++)
        {
-           console.log(grid[top][i])
+          //  console.log(grid[top][i]);
+           result.push(grid[top][i]);
        }
        top= top+1;
        direction = "bot";
@@ -30,7 +33,8 @@ function spiral(param1)
    {
        for (let i=top; i<bot; i++)
        {
-           console.log(grid[i][right-1])
+          // console.log(grid[i][right-1])
+          result.push(grid[i][right-1]);
        }
        right= right-1;
        direction = "left";
@@ -38,7 +42,8 @@ function spiral(param1)
    {
        for (let i=right-1; i>=left; i--)
        {
-           console.log(grid[bot-1][i])
+          //  console.log(grid[bot-1][i])
+           result.push(grid[bot-1][i]);
        }
        bot= bot-1;
        direction = "top";
@@ -46,12 +51,14 @@ function spiral(param1)
    {
        for (let i=bot-1; i>=top; i--)
        {
-           console.log(grid[i][left])
+          //  console.log(grid[i][left])
+           result.push(grid[i][left]);
        }
        left= left+1;
        direction = "right";
    }
  }
+console.log(result);
 }
 
 spiral (5);
