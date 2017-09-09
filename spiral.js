@@ -19,28 +19,28 @@ function spiral(param1){
       }
       top = top + 1;
       Arah = "bottom"; // untuk bawah
-
+//===============================================================================
     } else if (Arah == "bottom"){
       for (let i = top; i < bottom; i ++){
         console.log(kotak[i][right-1])
       }
       right = right-1;
       Arah = "left"// untuk kiri
-
+//===============================================================================
     } else if (Arah == "left"){
       for (let i=right-1; i>=left; i--){
         console.log(kotak[bottom-1][i])
       }
       bottom = bottom - 1;
       Arah = "top";//untuk atas
-
+//===============================================================================
     } else if (Arah == "top"){
       for (let i = bottom -1; i >=top; i--){
         console.log(kotak[i][left])
       }
-
       left = left+1;
       Arah = "right";//untuk kanan
+//===============================================================================
     }
   }
 }
